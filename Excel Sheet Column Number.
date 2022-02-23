@@ -1,0 +1,23 @@
+/**
+ * @param {string} columnTitle
+ * @return {number}
+ */
+var titleToNumber = function(columnTitle) {
+    let propertiesByLyric = []
+    let positionLyric = []
+    for(let i=10;i<=35;i++){
+      propertiesByLyric.push(i.toString(36).toUpperCase())
+    }
+    
+    const reverseArgument=columnTitle.split("").reverse()
+    reverseArgument.map((e)=>{
+      positionLyric.push(propertiesByLyric.indexOf(e) +1)
+    })
+    let initialValue = 0
+    positionLyric.map((i, index)=>{
+      initialValue+=i*(26**index)
+    })
+    return initialValue
+ 
+};
+
